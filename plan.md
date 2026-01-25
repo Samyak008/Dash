@@ -35,8 +35,6 @@ For each stock, store a small **state snapshot**:
 
 Change = `Snapshot_T1 − Snapshot_T0`
 
-No ML or LLM needed initially.
-
 ---
 
 ## MVP Types

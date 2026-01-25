@@ -1,0 +1,155 @@
+{
+  "info": {
+    "name": "Dash Intelligence API",
+    "description": "AI Stock Intelligence Platform - Portfolio Management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Checks",
+      "item": [
+        {
+          "name": "Root Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": [""]
+            }
+          }
+        },
+        {
+          "name": "Detailed Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["health"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Portfolio Management",
+      "item": [
+        {
+          "name": "Add Single Holding (Manual)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ticker_symbol\": \"RELIANCE.NS\",\n  \"quantity\": 10.0,\n  \"average_price\": 2500.00\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/portfolio/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "v1", "portfolio", ""]
+            }
+          }
+        },
+        {
+          "name": "Add TCS Holding",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ticker_symbol\": \"TCS.NS\",\n  \"quantity\": 5.0,\n  \"average_price\": 3200.00\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/portfolio/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "v1", "portfolio", ""]
+            }
+          }
+        },
+        {
+          "name": "Add INFY Holding",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ticker_symbol\": \"INFY.NS\",\n  \"quantity\": 15.0,\n  \"average_price\": 1400.00\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/portfolio/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "v1", "portfolio", ""]
+            }
+          }
+        },
+        {
+          "name": "Get User Portfolio",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/v1/portfolio/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "v1", "portfolio", ""]
+            }
+          }
+        },
+        {
+          "name": "Upload CSV (Zerodha/Upstox)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [],
+                  "description": "Upload your Zerodha or Upstox holdings CSV file"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/portfolio/upload-csv",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "v1", "portfolio", "upload-csv"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
